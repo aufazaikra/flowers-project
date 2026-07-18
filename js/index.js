@@ -1,5 +1,5 @@
 const title = document.querySelector('.title')
-const text = `I Have Something`.split('')
+const text = `Aku Punya Sesuatu`.split('')
 
 // Create container for better responsive layout
 title.style.display = 'flex'
@@ -23,9 +23,9 @@ textElements.forEach((element) => {
 
 // ===== NEON ELZA SEQUENTIAL FLICKER =====
 const neonLetters = ['neon-e', 'neon-l', 'neon-z', 'neon-a'];
-const ON_DURATION  = 500;   // ms huruf menyala aktif (flicker)
+const ON_DURATION = 500;   // ms huruf menyala aktif (flicker)
 const OFF_DURATION = 150;   // ms jeda sebelum huruf berikutnya
-const PAUSE_AFTER  = 800;   // ms jeda setelah semua huruf selesai satu putaran
+const PAUSE_AFTER = 800;   // ms jeda setelah semua huruf selesai satu putaran
 
 // State tiap huruf: 'on' | 'off'
 function setLetterOn(id) {
