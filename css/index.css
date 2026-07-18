@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 *,
 *::after,
 *::before {
@@ -109,3 +111,56 @@ a {
   fill: white;
   transform: scale(1.2);
 }
+
+/* ===== NEON NAME ELZA ===== */
+
+.neon-name {
+  position: absolute;
+  top: 28vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+  z-index: 10;
+}
+
+.neon-letter {
+  font-family: 'Orbitron', 'Courier New', monospace;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  /* State default: nyala penuh */
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #ff6ec7,
+    0 0 40px #ff6ec7,
+    0 0 80px #ff6ec7,
+    0 0 90px #ff6ec7;
+  opacity: 1;
+  transition: opacity 0.05s ease;
+}
+
+/* Keyframe: berkedip - neon flicker effect */
+@keyframes neon-flicker-on {
+  0%   { opacity: 0.1; text-shadow: none; }
+  10%  { opacity: 1;   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff6ec7, 0 0 40px #ff6ec7, 0 0 80px #ff6ec7; }
+  12%  { opacity: 0.2; text-shadow: none; }
+  20%  { opacity: 1;   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff6ec7, 0 0 40px #ff6ec7, 0 0 80px #ff6ec7; }
+  25%  { opacity: 0.5; text-shadow: 0 0 2px #fff, 0 0 5px #ff6ec7; }
+  30%  { opacity: 1;   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff6ec7, 0 0 40px #ff6ec7, 0 0 80px #ff6ec7; }
+  70%  { opacity: 1;   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff6ec7, 0 0 40px #ff6ec7, 0 0 80px #ff6ec7; }
+  75%  { opacity: 0.8; text-shadow: 0 0 3px #fff, 0 0 8px #ff6ec7; }
+  80%  { opacity: 1;   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff6ec7, 0 0 40px #ff6ec7, 0 0 80px #ff6ec7; }
+  100% { opacity: 1;   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff6ec7, 0 0 40px #ff6ec7, 0 0 80px #ff6ec7; }
+}
+
+@keyframes neon-off {
+  0%   { opacity: 0.08; text-shadow: none; color: #555; }
+  50%  { opacity: 0.05; text-shadow: none; color: #333; }
+  100% { opacity: 0.08; text-shadow: none; color: #555; }
+}
+
+/* Animasi sekuensial dihandle via JavaScript */
